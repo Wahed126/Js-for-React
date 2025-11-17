@@ -91,4 +91,48 @@ const noteText = `
 const isLogedIn = true;
 const welcome = () => isLogedIn && "Welcome, User01";
 
-console.log(welcome());
+// console.log(welcome());
+
+// Array Distructuring
+const myNotes = [
+  { title: "Meeting Notes", content: "Discuss project roadmap." },
+  { title: "Grocery List", content: "milk, egg, bread" },
+  { title: "Workout Plan", content: "Push Day: Bench, Shoulder Press" },
+  { title: "Recipe Ideas", content: "Pasta, Salad, Tacos" },
+];
+// The rest Operator: ...otherNotes
+const [note01, note02, ...otherNotes] = myNotes;
+// console.log(note02);
+// console.log(otherNotes);
+
+// Object Distructuring
+const objNote = {
+  title: "Meeting notes",
+  content: "Discuss project roadmap.",
+  isPinned: true,
+};
+
+// const { title, content, isPinned } = objNote;
+// Ordering is not a matter
+// const { content, isPinned, title } = objNote;
+// Can be renamed
+const { title: newTitle, content, isPinned } = objNote;
+// console.log(newTitle);
+
+// Nasted Distruturing
+const user = {
+  userName: "Wahed",
+  address: {
+    city: "Passau",
+    state: "Bayern",
+    country: "Germany",
+  },
+  hobbies: ["Movies", "Sports", "Music"],
+};
+
+const {
+  userName,
+  address: { city, state, country },
+  hobbies: [hobby01, ...otherHobbies],
+} = user;
+console.log(otherHobbies);
