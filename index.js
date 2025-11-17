@@ -52,7 +52,7 @@ const age = 29;
 
 const greeting = `Hello ${name} with ${age} years old.`;
 
-console.log(greeting);
+// console.log(greeting);
 
 const formatDate = (timestamp) => {
   const date = new Date(timestamp);
@@ -64,4 +64,31 @@ const note = {
   timestamp: Date.now(),
 };
 
-console.log(`Last Edited: ${formatDate(note.timestamp)}`);
+// console.log(`Last Edited: ${formatDate(note.timestamp)}`);
+
+// Ternary Short Cirtuit Rendering
+const number = 5;
+const message = number % 2 === 0 ? "Even Number" : "Odd Number";
+// console.log(`${number} is an ${message}`);
+
+// example
+const stickerNote = {
+  title: "Meeting notes",
+  content: "Discuss project roadmap",
+  timestamp: Date.now(),
+  isPinned: true,
+};
+
+const noteText = `
+    Title: ${stickerNote.title}
+    Status: ${stickerNote.isPinned ? "📌 Pinned Note" : "Regular note"}
+    Last Edited: ${new Date(stickerNote.timestamp).toLocaleString()}
+`;
+
+// console.log(noteText);
+
+// Short Circuiting
+const isLogedIn = true;
+const welcome = () => isLogedIn && "Welcome, User01";
+
+console.log(welcome());
