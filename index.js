@@ -44,4 +44,24 @@ const person = {
   getArrName: () => console.log("My name is: " + this.name), // This line return "My Name is: undefined"
 };
 
-person.getArrName();
+// person.getArrName();
+
+// Template literals
+const name = "Wahed";
+const age = 29;
+
+const greeting = `Hello ${name} with ${age} years old.`;
+
+console.log(greeting);
+
+const formatDate = (timestamp) => {
+  const date = new Date(timestamp);
+  return `${date.toLocaleDateString()} at ${date.toLocaleTimeString()}`;
+};
+
+const note = {
+  title: "Discuss project",
+  timestamp: Date.now(),
+};
+
+console.log(`Last Edited: ${formatDate(note.timestamp)}`);
